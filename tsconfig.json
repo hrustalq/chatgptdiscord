@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "outDir": "./lib", // Specify your output directory
+    "rootDir": "./src", // Specify your source directory
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*/*"]
+    }
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["node_modules"]
+}
