@@ -45,7 +45,7 @@ This Discord bot is powered by OpenAI's ChatGPT, allowing it to engage in natura
 5. **Start the Bot**:
 
   ```shell
-  npm install
+  npm start
   ```
 
 6. **Invite the Bot to Your Server**:
