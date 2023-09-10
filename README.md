@@ -4,14 +4,11 @@
 
 This Discord bot is powered by OpenAI's ChatGPT, allowing it to engage in natural language conversations with users on your server. With this bot, you can create dynamic and interactive experiences, provide information, or simply have a chatbot companion for your Discord community.
 
-## TODO
 
-- **ChatGPT Integration**: Utilizes OpenAI's ChatGPT API for natural language processing.
-- **Customizable Commands**: Easily configure bot commands and responses.
-- **Interactive Conversations**: Engage in back-and-forth conversations with users.
-- **Command Prefix**: Define your own custom prefix for bot commands.
-- **Easy Setup**: Simple instructions for setting up and deploying the bot.
+## API Integration info
 
+>- OpenAI ChatGPT API: https://beta.openai.com/docs/api-reference/chat
+>- Discord.js: https://discord.js.org/#/
 ## Installation and Setup
 
 1. **Clone the Repository**:
@@ -35,6 +32,8 @@ This Discord bot is powered by OpenAI's ChatGPT, allowing it to engage in natura
   ```shell
   DISCORD_TOKEN=YOUR_DISCORD_BOT_TOKEN
   OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+  OPENAI_ORG=YOUR_OPENAI_ORG
+  CHANNEL_ID=YOUR_DISCORD_CHANNEL_ID
   ```
 
 4. **Install Dependencies**:
