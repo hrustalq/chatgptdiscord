@@ -1,0 +1,1 @@
+export { openAiMessageConfig  } from "./setup";
