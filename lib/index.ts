@@ -28,6 +28,7 @@ const ignorePrefix = "!";
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
   if (message.content.startsWith(ignorePrefix)) return;
+  if (message.content === "stop") return;
   if (message.channel.id !== process.env.CHANNEL_ID && client.user && !message.mentions.users.has(client.user.id)) return;
 
   const conversationLog: CreateChatCompletionRequestMessage[] = [
@@ -82,10 +83,21 @@ client.on("messageCreate", async (message) => {
     return;
   }
 
-  if (response && response.choices[0].message.content) {
+  const responseMessage = response.choices[0].message.content;
+  const chunkSizeLimit = 2000;
+
+  if (!responseMessage) {
     clearInterval(sendTypingInterval);
-    message.reply(response.choices[0].message.content);
+    message.reply("I'm sorry, I'm having some trouble connection to OpenAI API, Try again later.");
+    return;
   }
+
+  for (let i = 0; i < responseMessage.length; i += chunkSizeLimit) {
+    const chunk = responseMessage.substring(i, i + chunkSizeLimit);
+
+    await message.reply(chunk);
+  }
+
 })
 
 client.login(process.env.DISCORD_TOKEN);
